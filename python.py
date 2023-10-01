@@ -282,7 +282,68 @@ linked_list.display()
 
 
 
+#6 Binary Search on a List of Strings:
 
+def binary_search_strings(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+string_list = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi", "mango"]
+target_string = "fig"
+result_index = binary_search_strings(string_list, target_string)
+print(f"String '{target_string}' found at index {result_index}")
+
+#7 Binary Search for Floating-Point Numbers:
+
+def binary_search_floats(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+float_list = [0.1, 0.2, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0]
+target_float = 2.0
+result_index = binary_search_floats(float_list, target_float)
+print(f"Float {target_float} found at index {result_index}")
+
+
+#8 Binary Search on a List of Objects (Custom Objects):
+
+class Student:
+    def __init__(self, roll, name):
+        self.roll = roll
+        self.name = name
+
+def binary_search_objects(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid].roll == target.roll:
+            return mid
+        elif arr[mid].roll < target.roll:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+student_list = [Student(101, "Alice"), Student(102, "Bob"), Student(103, "Charlie"), Student(104, "David")]
+target_student = Student(102, "Bob")
+result_index = binary_search_objects(student_list, target_student)
+print(f"Student with roll {target_student.roll} found at index {result_index}
 
 
 
