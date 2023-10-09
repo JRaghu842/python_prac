@@ -102,7 +102,8 @@ if __name__ == "__main__":
 
 
 # Web Scraper using BeautifulSoup and Requests:
-# This Python code snippet scrapes data from a website using the BeautifulSoup library to parse HTML and the Requests library to fetch web pages.
+# This Python code snippet scrapes data from a
+#website using the BeautifulSoup library to parse HTML and the Requests library to fetch web pages.
 
 
 import requests
@@ -413,7 +414,49 @@ else:
 
 
 
+# Input
+N = int(stdin.readline().strip())
 
+# Check if the number is GOOGLY
+result = check_googly_number(N)
+
+# Output
+print(result)
+
+
+# 10
+from sys import stdin
+
+def count_digit_occurrence(number, digit):
+    return str(number).count(str(digit))
+
+def find_max_occurrence_element(arr, k):
+    max_occurrence = -1
+    max_occurrence_element = -1
+
+    for element in arr:
+        occurrence = count_digit_occurrence(element, k)
+        if occurrence > max_occurrence:
+            max_occurrence = occurrence
+            max_occurrence_element = element
+
+    return max_occurrence_element
+
+# Input
+te, k = map(int, stdin.readline().strip().split())
+n = int(stdin.readline().strip())
+arr = list(map(int, stdin.readline().strip().split()))
+
+# Check if the array is empty
+if n == 0:
+    print(-1)
+else:
+    result = find_max_occurrence_element(arr, k)
+    # Check if there is no occurrence of digit k in the array
+    if result == -1:
+        print(-1)
+    else:
+        print(result)
 
 
 
