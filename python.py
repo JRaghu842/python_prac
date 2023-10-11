@@ -459,5 +459,93 @@ else:
         print(result)
 
 
+# Check for Palindrome:
+def is_palindrome(s):
+    s = s.lower().replace(" ", "")
+    return s == s[::-1]
+
+input_str = "racecar"
+is_palindrome_result = is_palindrome(input_str)
+print(is_palindrome_result)  # Output: True
+
+
+
+
+
+# Count Occurrences:
+def count_occurrences(text, substring):
+    return text.count(substring)
+
+input_text = "The quick brown fox jumps over the lazy dog."
+substring_to_count = "the"
+count = count_occurrences(input_text, substring_to_count)
+print(count)  # Output: 2
+
+
+
+
+# Title Case:
+def title_case(s):
+    return " ".join(word.capitalize() for word in s.split())
+
+input_str = "this is a sample title"
+title_cased_str = title_case(input_str)
+print(title_cased_str)  # Output: "This Is A Sample Title"
+
+
+
+# Remove Duplicates:
+def remove_duplicates(s):
+    return "".join(sorted(set(s), key=s.index))
+
+input_str = "programming"
+deduplicated_str = remove_duplicates(input_str)
+print(deduplicated_str)  # Output: "progamin"
+
+
+
+
+# String Compression:
+def compress_string(s):
+    compressed = ""
+    count = 1
+
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            count += 1
+        else:
+            compressed += s[i - 1] + str(count)
+            count = 1
+
+    compressed += s[-1] + str(count)
+    return compressed if len(compressed) < len(s) else s
+
+input_str = "aaabbbccccaa"
+compressed_str = compress_string(input_str)
+print(compressed_str)  # Output: "a3b3c4a2"
+
+
+
+# String Rotation Check:
+def is_rotation(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    return s2 in s1 + s1
+
+string1 = "abcde"
+string2 = "cdeab"
+is_rotation_result = is_rotation(string1, string2)
+print(is_rotation_result)  # Output: True
+
+
+
+
+# Replace Substring:
+def replace_substring(s, old_substring, new_substring):
+    return s.replace(old_substring, new_substring)
+
+input_str = "Hello, World!"
+replaced_str = replace_substring(input_str, "Hello", "Hi")
+print(replaced_str)  # Output: "Hi, World!"
 
 
